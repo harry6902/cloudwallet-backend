@@ -15,6 +15,9 @@ mongoose.connect('mongodb+srv://harry_123:hari123@cluster0.7ep1e.mongodb.net/?re
 
 const connection=new Connection("https://api.devnet.solana.com")
 
+app.get("/",(req,res)=>{
+    res.send("Hiii")
+})
 
 app.post("/api/v1/signup",async (req,res)=>{
     const {username,password,email}= req.body;
