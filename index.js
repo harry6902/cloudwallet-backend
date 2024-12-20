@@ -13,7 +13,7 @@ app.use(cors())
 
 mongoose.connect('mongodb+srv://harry_123:hari123@cluster0.7ep1e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 
-const connection=new Connection("https://api.devnet.solana.com")
+const connection=new Connection("https://api.mainnet-beta.solana.com")
 
 app.get("/",(req,res)=>{
     res.send("Hiii")
