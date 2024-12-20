@@ -8,8 +8,9 @@ const mongoose =require('mongoose');
 const bs58= require('bs58')
 const cors=require('cors')
 const app=express()
-app.use(express.json())
 app.use(cors())
+app.use(express.json())
+
 
 mongoose.connect('mongodb+srv://harry_123:hari123@cluster0.7ep1e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 
