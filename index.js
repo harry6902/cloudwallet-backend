@@ -142,4 +142,27 @@ app.post("/api/v1/txn", (req,res)=>{
     })
 })
 
+module.exports = (req, res) => {
+  // Set CORS headers explicitly
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Allow all origins (or specify your app's URL)
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true'); // If credentials are required (cookies, tokens)
+
+  // Handle the preflight request
+  if (req.method === 'OPTIONS') {
+    res.status(204).end(); // Respond to OPTIONS request (preflight)
+    return;
+  }
+
+  // Your regular function logic here (signup logic, etc.)
+  if (req.method === 'POST') {
+    // Handle the signup request
+    res.status(200).json({ message: 'Signup successful' });
+  } else {
+    res.status(405).json({ error: 'Method Not Allowed' });
+  }
+};
+
+
 app.listen(3000);
