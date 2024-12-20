@@ -80,7 +80,7 @@ app.post("/api/v1/signin", async (req,res)=>{
        },JWT_SECRET)
 
        const options={
-        httpOnly:true,
+        httpOnly:false,
         secure:true,
         sameSite:'None'
 
